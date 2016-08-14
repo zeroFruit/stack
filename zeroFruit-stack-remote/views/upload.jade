@@ -1,0 +1,35 @@
+extends ./layout
+
+block head
+   link(href='/css/edit_markdown.css', rel='stylesheet')
+
+block content
+   .jumbotron.center-block
+      h1 zeroFruit-stack
+         p
+   #editor-container.row      
+      #editor-bar.col-md-offset-1
+         .page-header
+            h1 Edit Post
+         #category-selector.btn-group(role='group', aria-label='category')
+            button.btn.btn-default(type='button' name='memo') Memo
+            button.btn.btn-default(type='button' name='phrase') phrase
+            button.btn.btn-default(type='button' name='Data_Structure') Data Structure
+      br
+      #editor-title.col-md-offset-1
+         form
+            .form-group
+               input#markdown_title.form-control.input-lg(type='text', placeholder='Title')
+   #editor-main   
+      section.row
+         textarea#pad.col-md-5.col-md-offset-1.full-height Write your text here..
+         #markdown.col-md-5.full-height   
+   br      
+   #editor-footer.row
+      form.col-md-offset-10  
+         input#markdown_submit.btn.btn-default.btn-lg(type='submit' value='submit') 
+   hr.featurette-divider
+   
+block footer   
+   script(src='https://cdn.rawgit.com/showdownjs/showdown/1.2.0/dist/showdown.min.js')
+   script(src='/js/edit_markdown.js')

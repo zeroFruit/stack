@@ -1,0 +1,26 @@
+extends ./layout
+
+block content
+   .jumbotron.center-block
+      h1 zeroFruit-stack
+         p 
+   // content
+   .row.featurette
+      .col-md-6.col-md-offset-1   
+         .contentTitle
+            .page-header
+               h1 This needs authentication 
+                  span(aria-hidden="true").glyphicon.glyphicon-exclamation-sign
+                  small 
+   form.form-horizontal(action='/auth/edit' method='post')
+      .form-group
+        label.col-sm-2.control-label(for='inputUsername') Username
+        .col-sm-3
+          input#inputEmail3.form-control(type='text', placeholder='Username' name='username')
+      .form-group
+        label.col-sm-2.control-label(for='inputPassword') Password
+        .col-sm-3
+          input#inputPassword3.form-control(type='password', placeholder='Password' name='password')
+      .form-group
+        .col-sm-offset-2.col-sm-3
+          button.btn.btn-default(type='submit') Submit   

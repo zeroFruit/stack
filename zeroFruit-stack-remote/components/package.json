@@ -1,0 +1,26 @@
+{
+  "name": "zeroFruit-stack",
+  "version": "1.0.0",
+  "description": "zeroFruit Stack web page",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "supervisor index.js"
+  },
+  "author": "zeroFruit",
+  "license": "ISC",
+  "dependencies": {
+     "body-parser": "",
+     "express": "4.14.0",
+     "express-mysql-session": "1.1.1",
+     "express-session": "1.13.0",
+     "jade": "1.11.0",
+     "multer": "1.1.0",
+     "mysql": "2.10.2",
+     "node-mysql": "0.4.2",
+     "passport": "0.3.2",
+     "passport-local": "1.0.0",
+     "pbkdf2-password": "1.1.0",
+     "showdown": "1.4.2"
+  }
+}

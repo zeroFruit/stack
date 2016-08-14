@@ -1,0 +1,39 @@
+extends ./layout
+
+block head
+   link(href='/css/content.css' rel='stylesheet')
+block content
+   // contents
+   .jumbotron.center-block
+      h1 zeroFruit-stack
+         p
+   .row.featurette
+      .col-md-6.col-md-offset-1       
+         .contentTitle
+            .page-header
+               h1= title 
+                  small _!{topic}
+               | !{date}  
+            #contentView
+               | !{content}
+   hr
+   nav(aria-label='Page navigation')
+      footer.footer
+        .container
+          ul.pagination
+             -var previous = '/content/'+ topic + '/' + (page - 1)
+             li
+                a(href=previous, aria-label='Previous')
+                   span(aria-hidden='true') «
+             each page in pageArr
+                -var pageLink = '/content/'+ topic + '/' + page
+                if currentPage === page
+                   li(id='currentLi')
+                      a(href=pageLink id='currentHref')= page
+                else  
+                   li
+                      a(href=pageLink)= page                  
+             -var next = '/content/'+ topic + '/' + (page + 1)  
+             li
+                a(href=next, aria-label='Next')
+                   span(aria-hidden='true') »
