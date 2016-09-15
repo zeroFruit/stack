@@ -3,11 +3,7 @@ extends ./layout
 block head
    link(href='/css/content.css' rel='stylesheet')
 block content
-   // contents
-   .jumbotron.center-block
-      h1 zeroFruit-stack
-         p
-   .row.featurette
+   .row.featurette#content-container
       .col-md-6.col-md-offset-1       
          .contentTitle
             .page-header
@@ -16,24 +12,28 @@ block content
                | !{date}  
             #contentView
                | !{content}
+      .col-md-4.col-md-offset-1#content-sidebar         
    hr
    nav(aria-label='Page navigation')
       footer.footer
-        .container
-          ul.pagination
-             -var previous = '/content/'+ topic + '/' + (page - 1)
-             li
-                a(href=previous, aria-label='Previous')
-                   span(aria-hidden='true') «
-             each page in pageArr
-                -var pageLink = '/content/'+ topic + '/' + page
-                if currentPage === page
-                   li(id='currentLi')
-                      a(href=pageLink id='currentHref')= page
-                else  
-                   li
-                      a(href=pageLink)= page                  
-             -var next = '/content/'+ topic + '/' + (page + 1)  
-             li
-                a(href=next, aria-label='Next')
-                   span(aria-hidden='true') »
+         .container
+               -var previous = '/content/'+ topic + '/' +(currentPage - 1)
+               a(href=previous, aria-label='Previous')
+                  | prev
+               b     
+               each page in pageArr
+                  -var pageLink = '/content/'+ topic + '/' + page
+                  if currentPage === page
+                     a(href=pageLink id='currentHref')= page + "  "  
+                  else  
+                     a(href=pageLink)= page + "  "            
+                           
+               -var next = '/content/'+ topic + '/' + (currentPage + 1)  
+               a(href=next, aria-label='Next')
+                  | next
+
+block footer
+   link(rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/agate.min.css")
+   script(src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/highlight.min.js")
+   script.
+      hljs.initHighlightingOnLoad();                       

@@ -4,7 +4,12 @@ module.exports = function(connection) {
    var fs         = require('fs');
 
    route.get('/', function(req, res) {
-      res.render('upload');
+      if (req.session.admin) {
+         res.render('upload');
+      }
+      else {
+         res.render('edit_auth');
+      }
    });
    route.post('/', function(req, res) {
 

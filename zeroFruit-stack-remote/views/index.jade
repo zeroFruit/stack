@@ -1,18 +1,20 @@
 extends ./layout
 
+block head
+   link(href='/css/dashboard.css' rel='stylesheet')
 block content
-   .jumbotron.center-block
-      h1 zeroFruit-stack
-         p 
    // content
-   .row.featurette
-     .col-md-6.col-md-offset-1
-       h2.featurette-heading
-         | Archive Everything that Blow my mind. 
-         span.text-muted post everything - books, drawing, h/w s/w snippets
-       p.lead
-         | 
-         
-     .col-md-5
-       img.featurette-image.img-responsive.center-block(src='/content/index_ball.jpeg', alt='Generic placeholder image')
-   hr.featurette-divider   
+   .row
+      .col-md-12#index-header
+         .featurette
+            h2.featurette-heading
+               | Archive Everything that Blow my mind. 
+               br
+               br
+               span.text-muted _zeroFruit-stack
+            p.lead
+               | 
+      a(href='/etl')
+         .col-md-12#index-menu
+            span#etl(style='display: block;') ETL
+            

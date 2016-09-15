@@ -3,19 +3,22 @@ module.exports = function(passport) {
    var route      = express.Router();
 
    /* Router */
-   route.get('/edit', function(req, res) {
-      res.render('edit_auth');
-   });
+   // route.get('/edit', function(req, res) {
+   //    if (!req.session.admin) {
+   //       res.render('edit_auth');
+   //    }
+   // });
 
-   route.post('/edit', /* local strategy */
-      passport.authenticate(
-         'local',
-         {
-           successRedirect: '/edit',
-           failureRedirect: '/',
-           failureFlash: false
-         })
-   );
+   // route.post('/edit', /* local strategy */
+   //
+   //    passport.authenticate(
+   //       'local',
+   //       {
+   //         successRedirect: '/edit',
+   //         failureRedirect: '/',
+   //         failureFlash: false
+   //       })
+   // );
 
    return route;
 }

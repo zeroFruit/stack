@@ -1,0 +1,49 @@
+extends layout
+
+block head
+   link(href='/css/etl.css' rel='stylesheet')
+   
+block content
+   .row
+      .col-md-12      
+         .jumbotron
+            h2.title Upload
+   .row#etl_fileup
+      form#etl_form(enctype='multipart/form-data', method='post')
+         .col-md-3.col-md-offset-1
+            .form-group
+               label(for='InputFile') File input
+               input.title#InputFile(type='file')
+         .col-md-5
+            .panel.panel-default
+               // Default panel contents
+               .panel-heading Course
+               // List group
+               ul.list-group
+                  li#1.course_title.list-group-item Rural Waurces Systems Engineering
+                  li#2.course_title.list-group-item Logic Design
+                  li#3.course_title.list-group-item Data Structure
+                  li#4.course_title.list-group-item System Programming
+         input#etl_submit.btn.btn-default(type='submit' value='Submit')
+   .row      
+      #isValid.col-md-3.col-md-offset-1         
+   .row
+      .col-md-12      
+         .jumbotron
+            h2.title Contents
+   .row
+      a(href='#')
+         .col-md-3#etl_menu
+            span#etl_course(style='display: block;') Rural Waurces Systems Engineering
+      a(href='#')
+         .col-md-3#etl_menu
+            span#etl_course(style='display: block;') Logic Design            
+      a(href='#')
+         .col-md-3#etl_menu
+            span#etl_course(style='display: block;') Data Structure
+      a(href='#')
+         .col-md-3#etl_menu
+            span#etl_course(style='display: block;') System Programming   
+
+block footer
+   script(src='/js/etl_index.js')            

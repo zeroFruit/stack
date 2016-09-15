@@ -52,7 +52,7 @@ module.exports = function(connection) {
             currentPage = 1;
          }
          else if (currentPage > totalPage) { /* Check that the page is below the last page */
-            totalPage = currentPage;
+            currentPage = totalPage;
          }
          /* Listing the Pages */
          for (var p = 1; p <= totalPage; p++) {

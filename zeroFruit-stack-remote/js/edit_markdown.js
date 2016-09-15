@@ -24,6 +24,12 @@ $(document).ready(function() {
       category = $(this).attr('name');
       category_checker = true;
    });
+   $(':button[name=arduino]').on('click', function() {
+      $('.active').removeClass('active');
+      $(this).addClass('active');
+      category = $(this).attr('name');
+      category_checker = true;
+   });
 
    /* showdown markdown previewer */
    var converter = new showdown.Converter();
@@ -64,7 +70,7 @@ $(document).ready(function() {
       }
       else {
          alert('category is not selected!');
-         
+
          // how can we restore content?
       }
    });
